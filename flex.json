@@ -1,0 +1,40 @@
+{
+    "description": "Flex 2 Project File",
+    "name": "This is stupid.",
+    "objects": [
+        {
+            "name": "I shouldn't do this.",
+            "palettes": [
+                {
+                    "path": "palette/Sonic.bin",
+                    "length": 1
+                },
+                {
+                    "path": "palette/Sonic - LZ Underwater.bin",
+                    "length": 1
+                },
+                {
+                    "path": "palette/Sonic - SBZ3 Underwater.bin",
+                    "length": 1
+                }
+            ],
+            "art": {
+                "path": "artunc/Sonic.bin",
+                "compression": "Uncompressed"
+            },
+            "mappings": {
+                "path": "_maps/Sonic.asm",
+                "format": "Sonic 1",
+                "customDefinition": "",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": true,
+                "path": "_maps/Sonic - Dynamic Gfx Script.asm",
+                "format": "Sonic 1",
+                "customDefinition": "",
+                "label": ""
+            }
+        }
+    ]
+}
