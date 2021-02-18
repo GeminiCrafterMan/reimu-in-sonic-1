@@ -39,7 +39,7 @@ Sonic_Move:
 		lea	(v_objspace).w,a1
 		lea	(a1,d0.w),a1
 		tst.b	obStatus(a1)
-		bmi.s	Sonic_LookUp
+		bmi.w	Sonic_LookUp
 		moveq	#0,d1
 		move.b	obActWid(a1),d1
 		move.w	d1,d2
@@ -48,34 +48,51 @@ Sonic_Move:
 		add.w	obX(a0),d1
 		sub.w	obX(a1),d1
 		cmpi.w	#4,d1
-		blt.s	loc_12F6A
+		blt.s	Sonic_BalanceOnObjLeft
 		cmp.w	d2,d1
-		bge.s	loc_12F5A
-		bra.s	Sonic_LookUp
+		bge.s	Sonic_BalanceOnObjRight
+		bra.w	Sonic_LookUp
 ; ===========================================================================
+Sonic_BalanceOnObjRight:
+		move.b	#id_Balance,obAnim(a0)
+		addq.w	#6,d2
+		cmp.w	d2,d1
+		blt.w	Sonic_ResetScr
+		move.b	#id_Balance2,obAnim(a0)
+		bra.w	Sonic_ResetScr
+
+Sonic_BalanceOnObjLeft:
+		move.b	#id_Balance,obAnim(a0)
+		cmpi.w	#-4,d1
+		bge.w	Sonic_ResetScr
+		move.b	#id_Balance2,obAnim(a0)
+		bra.w	Sonic_ResetScr
 
 Sonic_Balance:
-		jsr	(ObjFloorDist).l
+		move.w	obX(a0),d3
+		jsr	(ObjFloorDist2).l
 		cmpi.w	#$C,d1
-		blt.s	Sonic_LookUp
+		blt.w	Sonic_LookUp
+		move.b	#id_Balance,obAnim(a0)
+		move.w	obX(a0),d3
+		subq.w	#6,d3
+		jsr	(ObjFloorDist2).l
+		cmpi.w	#$C,d1
+		blt.w	Sonic_ResetScr
+		move.b	#id_Balance2,obAnim(a0)
+		bra.w	Sonic_ResetScr
+
+Sonic_BalanceLeft:
 		cmpi.b	#3,$36(a0)
-		bne.s	loc_12F62
-
-loc_12F5A:
-		bclr	#0,obStatus(a0)
-		bra.s	loc_12F70
-; ===========================================================================
-
-loc_12F62:
-		cmpi.b	#3,$37(a0)
 		bne.s	Sonic_LookUp
-
-loc_12F6A:
-		bset	#0,obStatus(a0)
-
-loc_12F70:
-		move.b	#id_Balance,obAnim(a0) ; use "balancing" animation
-		bra.s	Sonic_ResetScr
+		move.b	#id_Balance,obAnim(a0)
+		move.w	obX(a0),d3
+		addq.w	#6,d3
+		jsr	(ObjFloorDist2).l
+		cmpi.w	#$C,d1
+		blt.w	Sonic_ResetScr
+		move.b	#id_Balance,obAnim(a0)
+		bra.w	Sonic_ResetScr
 ; ===========================================================================
 
 Sonic_LookUp:

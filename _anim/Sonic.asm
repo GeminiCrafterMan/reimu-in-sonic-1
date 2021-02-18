@@ -39,9 +39,9 @@ SonAni_Push:	dc.b $FD,  fr_push1,  fr_push2,  fr_push3,  fr_push4,     afEnd,   
 SonAni_Wait:	dc.b $17, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand
 		dc.b fr_stand, fr_stand, fr_stand, fr_wait2, fr_wait1, fr_wait1, fr_wait1, fr_wait2, fr_wait3, afBack, 2
 		even
-SonAni_Balance:	dc.b 7, fr_balance1, fr_balance2, fr_balance3, afEnd
+SonAni_Balance:	dc.b 5, fr_balbnce1, fr_balbnce2, fr_balbnce3, afEnd
 		even
-SonAni_Balance2:dc.b 5, fr_balbnce1, fr_balbnce2, fr_balbnce3, afEnd
+SonAni_Balance2:dc.b 7, fr_balance1, fr_balance2, fr_balance3, afEnd
         even
 SonAni_LookUp:	dc.b 5, fr_lookt, fr_lookup, afBack, 1
 		even
