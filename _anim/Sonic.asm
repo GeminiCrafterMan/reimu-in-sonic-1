@@ -25,6 +25,7 @@ ptr_Drown:	dc.w SonAni_Drown-Ani_Sonic
 ptr_Death:	dc.w SonAni_Death-Ani_Sonic
 ptr_Hurt:	dc.w SonAni_Hurt-Ani_Sonic
 ptr_Null:	dc.w SonAni_Null-Ani_Sonic
+ptr_Victory:dc.w SonAni_Victory-Ani_Sonic
 
 SonAni_Walk:	dc.b $FF, fr_walk15, fr_walk16,	fr_walk17, fr_walk18, fr_walk11,	fr_walk12,	fr_walk13,	fr_walk14, afEnd
 		even
@@ -36,8 +37,15 @@ SonAni_Roll2:	dc.b $FE,  fr_Roll1,  fr_Roll2,  fr_Roll5,  fr_Roll3,  fr_Roll4,  
 		even
 SonAni_Push:	dc.b $FD,  fr_push1,  fr_push2,  fr_push3,  fr_push4,     afEnd,     afEnd, afEnd, afEnd, afEnd
 		even
-SonAni_Wait:	dc.b $17, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand
-		dc.b fr_stand, fr_stand, fr_stand, fr_wait2, fr_wait1, fr_wait1, fr_wait1, fr_wait2, fr_wait3, afBack, 2
+SonAni_Wait:	dc.b $B, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand
+				dc.b 	  fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand
+				dc.b	  fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_stand, fr_wait1, fr_wait2
+				dc.b	  fr_wait3, fr_wait3, fr_wait3, fr_wait3, fr_wait4, fr_wait3, fr_wait4, fr_wait3, fr_wait4
+				dc.b	  fr_wait3, fr_wait4, fr_wait3, fr_wait4, fr_wait3, fr_wait4, fr_wait3, fr_wait4, fr_wait3
+				dc.b	  fr_wait4, fr_wait3, fr_wait4, fr_wait3, fr_wait4, fr_wait3, fr_wait4, fr_wait3, fr_wait3
+				dc.b	  fr_wait5, fr_wait6, fr_wait6, fr_wait6, fr_wait6, fr_wait6, fr_wait6, fr_wait6, fr_wait6
+				dc.b	  fr_wait7, fr_wait8, fr_wait8, fr_wait8, fr_wait8, fr_wait8, fr_wait8, fr_wait8, fr_wait8
+				dc.b	  fr_wait7, fr_wait6, fr_wait5, fr_wait3, fr_wait3, fr_wait3, fr_wait2, fr_wait1, afEnd
 		even
 SonAni_Balance:	dc.b 5, fr_balbnce1, fr_balbnce2, fr_balbnce3, afEnd
 		even
@@ -71,6 +79,8 @@ SonAni_Hurt:	dc.b 3,	fr_injury, afEnd
 		even
 SonAni_Null:	dc.b $77, fr_null, afChange, id_Walk
 		even
+SonAni_Victory:	dc.b 5, fr_victory1, fr_victory2, fr_victory2, fr_victory2, fr_victory3, fr_victory3, fr_victory4, fr_victory4, fr_victory3, fr_victory3, afBack, 7
+		even
 
 id_Walk:	equ (ptr_Walk-Ani_Sonic)/2	; 0
 id_Run:		equ (ptr_Run-Ani_Sonic)/2	; 1
@@ -94,3 +104,4 @@ id_Drown:	equ (ptr_Drown-Ani_Sonic)/2	; $12
 id_Death:	equ (ptr_Death-Ani_Sonic)/2	; $13
 id_Hurt:	equ (ptr_Hurt-Ani_Sonic)/2	; $14
 id_Null:	equ (ptr_Null-Ani_Sonic)/2	; $15
+id_Victory:	equ (ptr_Victory-Ani_Sonic)/2

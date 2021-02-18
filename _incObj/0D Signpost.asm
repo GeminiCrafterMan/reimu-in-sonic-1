@@ -99,10 +99,16 @@ Sign_SparkPos:	dc.b -$18,-$10		; x-position, y-position
 Sign_SonicRun:	; Routine 6
 		tst.w	(v_debuguse).w	; is debug mode	on?
 		bne.w	locret_ECEE	; if yes, branch
-		btst	#1,(v_player+obStatus).w
-		bne.s	loc_EC70
-		move.b	#1,(f_lockctrl).w ; lock controls
-		move.w	#btnR<<8,(v_jpadhold2).w ; make Sonic run to the right
+		tst.b	(f_bigring).w	; jumped into giant ring?
+		bne.s	loc_EC70	; if so, check for acts
+		btst	#1,(v_player+obStatus).w; in air?
+		bne.w	locret_ECEE		; if so, go away
+		st.b	(f_lockmulti).w	; lock controls
+		clr.w	(v_player+obVelX).w	; clear x-vel
+		clr.w	(v_player+obVelY).w	; clear y-vel
+		clr.w	(v_player+obInertia).w	; clear inertia
+		move.b	#id_Victory,(v_player+obAnim).w
+		; don't need to clear spindash dust if you don't have any at all~
 
 	loc_EC70:
 		tst.b	(v_player).w
@@ -110,8 +116,8 @@ Sign_SonicRun:	; Routine 6
 		move.w	(v_player+obX).w,d0
 		move.w	(v_limitright2).w,d1
 		addi.w	#$128,d1
-		cmp.w	d1,d0
-		bcs.s	locret_ECEE
+;		cmp.w	d1,d0
+;		bcs.s	locret_ECEE
 
 	loc_EC86:
 		addq.b	#2,obRoutine(a0)

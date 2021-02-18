@@ -374,3 +374,7 @@ fr_Drown:	equ $5C
 fr_Death:	equ $5D
 fr_Injury:	equ $5E
 fr_GetAir:	equ $5F
+fr_Victory1:equ $60
+fr_Victory2:equ $61
+fr_Victory3:equ $62
+fr_Victory4:equ $63
