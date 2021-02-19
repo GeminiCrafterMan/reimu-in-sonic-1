@@ -35,6 +35,32 @@
                 "customDefinition": "",
                 "label": ""
             }
+        },
+        {
+            "name": "Title.",
+            "palettes": [
+                {
+                    "path": "palette\\Title Screen.bin",
+                    "length": 4
+                }
+            ],
+            "art": {
+                "path": "artnem\\Title Screen Sonic.bin",
+                "compression": "Nemesis"
+            },
+            "mappings": {
+                "path": "_maps\\Title Screen Sonic.asm",
+                "format": "Sonic 1",
+                "customDefinition": "",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "format": "Sonic 1",
+                "customDefinition": "",
+                "label": ""
+            }
         }
     ]
 }
