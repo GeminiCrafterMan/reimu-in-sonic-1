@@ -6993,6 +6993,11 @@ MusicList2:
 ; ---------------------------------------------------------------------------
 
 Sonic_MdNormal:
+		tst.b	(v_projdelay).w
+        beq.s	@skipsub
+        sub.b    #1,(v_projdelay).w
+    @skipsub:
+		bsr.w	Reimu_Shoot
 		bsr.w	Sonic_Jump
 		bsr.w	Sonic_SlopeResist
 		bsr.w	Sonic_Move
@@ -7005,6 +7010,11 @@ Sonic_MdNormal:
 ; ===========================================================================
 
 Sonic_MdJump:
+		tst.b	(v_projdelay).w
+        beq.s	@skipsub
+        sub.b    #1,(v_projdelay).w
+    @skipsub:
+		bsr.w	Reimu_Shoot
 		bsr.w	Sonic_JumpHeight
 		bsr.w	Sonic_JumpDirection
 		bsr.w	Sonic_LevelBound
@@ -7020,6 +7030,11 @@ loc_12E5C:
 ; ===========================================================================
 
 Sonic_MdRoll:
+		tst.b	(v_projdelay).w
+        beq.s	@skipsub
+        sub.b    #1,(v_projdelay).w
+    @skipsub:
+		bsr.w	Reimu_Shoot
 		bsr.w	Sonic_Jump
 		bsr.w	Sonic_RollRepel
 		bsr.w	Sonic_RollSpeed
@@ -7031,6 +7046,11 @@ Sonic_MdRoll:
 ; ===========================================================================
 
 Sonic_MdJump2:
+		tst.b	(v_projdelay).w
+        beq.s	@skipsub
+        sub.b    #1,(v_projdelay).w
+    @skipsub:
+		bsr.w	Reimu_Shoot
 		bsr.w	Sonic_JumpHeight
 		bsr.w	Sonic_JumpDirection
 		bsr.w	Sonic_LevelBound
@@ -7052,6 +7072,7 @@ loc_12EA6:
 
 		include	"_incObj\Sonic LevelBound.asm"
 		include	"_incObj\Sonic Roll.asm"
+		include "_incObj\Reimu Shoot.asm"
 		include	"_incObj\Sonic Jump.asm"
 		include	"_incObj\Sonic JumpHeight.asm"
 		include	"_incObj\Sonic SlopeResist.asm"
@@ -7067,7 +7088,7 @@ loc_12EA6:
 		include	"_incObj\Sonic LoadGfx.asm"
 
 		include	"_incObj\0A Drowning Countdown.asm"
-
+		include "_incObj\02 Reimu Card.asm"
 
 ; ---------------------------------------------------------------------------
 ; Subroutine to	play music for LZ/SBZ3 after a countdown

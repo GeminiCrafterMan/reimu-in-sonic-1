@@ -103,7 +103,9 @@ cMagenta:	equ cBlue+cRed		; colour magenta
 ; Joypad input
 btnStart:	equ %10000000 ; Start button	($80)
 btnA:		equ %01000000 ; A		($40)
+btnAC:		equ %01100000
 btnC:		equ %00100000 ; C		($20)
+btnBC:		equ %00110000
 btnB:		equ %00010000 ; B		($10)
 btnR:		equ %00001000 ; Right		($08)
 btnL:		equ %00000100 ; Left		($04)

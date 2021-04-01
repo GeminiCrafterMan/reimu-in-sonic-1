@@ -1,9 +1,30 @@
 {
-    "description": "Flex 2 Project File",
+    "Flex": 2,
     "name": "This is stupid.",
+    "node": "ed19646e-c9f7-4f91-9fb4-8b9e1ea101d3",
     "objects": [
         {
-            "name": "I shouldn't do this.",
+            "uuid": "ed19646e-c9f7-4f91-9fb4-8b9e1ea101d3",
+            "format": "Sonic 1.js",
+            "name": "Projectile",
+            "palettes": [],
+            "art": {
+                "path": "artnem\\reimu_card.bin",
+                "compression": "Nemesis",
+                "offset": 0
+            },
+            "mappings": {
+                "path": "_maps\\Reimu Card.asm",
+                "label": "ReimuCard"
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "label": ""
+            }
+        },
+        {
+            "name": "Reimu",
             "palettes": [
                 {
                     "path": "palette/Sonic.bin",
@@ -20,7 +41,8 @@
             ],
             "art": {
                 "path": "artunc/Sonic.bin",
-                "compression": "Uncompressed"
+                "compression": "Uncompressed",
+                "offset": 0
             },
             "mappings": {
                 "path": "_maps/Sonic.asm",
@@ -34,10 +56,12 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "90caed19-646e-49f7-8f91-dfb48b9e1ea1",
+            "format": "Sonic 1.js"
         },
         {
-            "name": "Title.",
+            "name": "Title Screen.",
             "palettes": [
                 {
                     "path": "palette\\Title Screen.bin",
@@ -46,7 +70,8 @@
             ],
             "art": {
                 "path": "artnem\\Title Screen Sonic.bin",
-                "compression": "Nemesis"
+                "compression": "Nemesis",
+                "offset": 0
             },
             "mappings": {
                 "path": "_maps\\Title Screen Sonic.asm",
@@ -60,7 +85,9 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "caed1964-6ec9-470f-91df-b48b9e1ea101",
+            "format": "Sonic 1.js"
         }
     ]
 }

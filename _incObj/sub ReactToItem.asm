@@ -165,6 +165,8 @@ React_Monitor:
 ; ===========================================================================
 
 React_Enemy:
+		cmpi.b	#id_ProjCard,0(a0)
+		beq.s	@donthurtsonic
 		tst.b	(v_invinc).w	; is Sonic invincible?
 		bne.s	@donthurtsonic	; if yes, branch
 		cmpi.b	#id_Roll,obAnim(a0) ; is Sonic rolling/jumping?
@@ -233,6 +235,8 @@ React_Caterkiller:
 		bset	#7,obStatus(a1)
 
 React_ChkHurt:
+		cmpi.b	#id_ProjCard,0(a0)
+		beq.s	@isflashing
 		tst.b	(v_invinc).w	; is Sonic invincible?
 		beq.s	@notinvincible	; if not, branch
 

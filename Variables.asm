@@ -100,6 +100,9 @@ v_1up_ram_copy:		equ v_spcsfx_track_ram_end
 ; From here on, no longer relative to sound driver RAM
 ; =================================================================================
 
+v_projdelay:equ $FFFFF5FC	; Delay between being able to fire the next projectile.
+v_power:	equ $FFFFF5FE	; Power. Goes up to $FF (255), but should only go up to $7F (127).
+
 v_gamemode:	equ $FFFFF600	; game mode (00=Sega; 04=Title; 08=Demo; 0C=Level; 10=SS; 14=Cont; 18=End; 1C=Credit; +8C=PreLevel)
 v_jpadhold2:	equ $FFFFF602	; joypad input - held, duplicate
 v_jpadpress2:	equ $FFFFF603	; joypad input - pressed, duplicate
