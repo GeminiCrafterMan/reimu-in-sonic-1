@@ -62,7 +62,7 @@ PLC_Main2:	dc.w ((PLC_Main2end-PLC_Main2-2)/6)-1
 		plcm	Nem_Monitors, $D000	; monitors
 		plcm	Nem_Shield, $A820	; shield
 		plcm	Nem_Stars, $AB80	; invincibility	stars
-		plcm	Nem_ProjCard, $F600
+		plcm	Nem_ProjCard, $F540
 	PLC_Main2end:
 ; ---------------------------------------------------------------------------
 ; Pattern load cues - explosion

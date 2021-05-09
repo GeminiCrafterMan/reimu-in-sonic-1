@@ -1,7 +1,7 @@
 {
     "Flex": 2,
     "name": "This is stupid.",
-    "node": "ed19646e-c9f7-4f91-9fb4-8b9e1ea101d3",
+    "node": "90caed19-646e-49f7-8f91-dfb48b9e1ea1",
     "objects": [
         {
             "uuid": "ed19646e-c9f7-4f91-9fb4-8b9e1ea101d3",
@@ -9,12 +9,12 @@
             "name": "Projectile",
             "palettes": [],
             "art": {
-                "path": "artnem\\reimu_card.bin",
+                "path": "artnem/reimu_card.bin",
                 "compression": "Nemesis",
                 "offset": 0
             },
             "mappings": {
-                "path": "_maps\\Reimu Card.asm",
+                "path": "_maps/Reimu Card.asm",
                 "label": "ReimuCard"
             },
             "dplcs": {

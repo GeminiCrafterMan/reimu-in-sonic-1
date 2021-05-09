@@ -130,6 +130,8 @@ ReactToItem:
 		andi.b	#$3F,d0
 		cmpi.b	#6,d0		; is collision type $46	?
 		beq.s	React_Monitor	; if yes, branch
+		cmpi.b	#id_ProjCard,0(a0)
+		beq.s	@invincible
 		cmpi.w	#90,$30(a0)	; is Sonic invincible?
 		bcc.w	@invincible	; if yes, branch
 		addq.b	#2,obRoutine(a1) ; advance the object's routine counter
@@ -139,6 +141,8 @@ ReactToItem:
 ; ===========================================================================
 
 React_Monitor:
+		cmpi.b	#id_ProjCard,0(a0)
+		beq.s	@break
 		tst.w	obVelY(a0)	; is Sonic moving upwards?
 		bpl.s	@movingdown	; if not, branch
 
@@ -158,6 +162,7 @@ React_Monitor:
 		cmpi.b	#id_Roll,obAnim(a0) ; is Sonic rolling/jumping?
 		bne.s	@donothing
 		neg.w	obVelY(a0)	; reverse Sonic's y-motion
+@break:
 		addq.b	#2,obRoutine(a1) ; advance the monitor's routine counter
 
 	@donothing:
@@ -351,16 +356,20 @@ KillSonic:
 
 
 React_Special:
+
 		move.b	obColType(a1),d1
 		andi.b	#$3F,d1
 		cmpi.b	#$B,d1		; is collision type $CB	?
 		beq.s	@caterkiller	; if yes, branch
 		cmpi.b	#$C,d1		; is collision type $CC	?
 		beq.s	@yadrin		; if yes, branch
+		cmpi.b	#id_ProjCard,0(a0)
+		beq.s	@return
 		cmpi.b	#$17,d1		; is collision type $D7	?
 		beq.s	@D7orE1		; if yes, branch
 		cmpi.b	#$21,d1		; is collision type $E1	?
 		beq.s	@D7orE1		; if yes, branch
+@return:
 		rts	
 ; ===========================================================================
 

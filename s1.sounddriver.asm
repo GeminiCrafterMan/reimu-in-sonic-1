@@ -2493,6 +2493,7 @@ Music85:	incbin	"sound/music/Mus85 - SYZ.bin"
 Music86:	incbin	"sound/music/Mus86 - SBZ.bin"
 		even
 Music87:	incbin	"sound/music/Mus87 - Invincibility.bin"
+;Music87:	incbin	"sound/music/th08_09.bin"
 		even
 Music88:	incbin	"sound/music/Mus88 - Extra Life.bin"
 		even
