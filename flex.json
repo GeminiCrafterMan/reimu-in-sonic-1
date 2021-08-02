@@ -1,7 +1,7 @@
 {
     "Flex": 2,
     "name": "This is stupid.",
-    "node": "90caed19-646e-49f7-8f91-dfb48b9e1ea1",
+    "node": "caed1964-6ec9-470f-91df-b48b9e1ea101",
     "objects": [
         {
             "uuid": "ed19646e-c9f7-4f91-9fb4-8b9e1ea101d3",
@@ -64,17 +64,17 @@
             "name": "Title Screen.",
             "palettes": [
                 {
-                    "path": "palette\\Title Screen.bin",
+                    "path": "palette/Title Screen.bin",
                     "length": 4
                 }
             ],
             "art": {
-                "path": "artnem\\Title Screen Sonic.bin",
+                "path": "artnem/Title Screen Sonic.bin",
                 "compression": "Nemesis",
                 "offset": 0
             },
             "mappings": {
-                "path": "_maps\\Title Screen Sonic.asm",
+                "path": "_maps/Title Screen Sonic.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
