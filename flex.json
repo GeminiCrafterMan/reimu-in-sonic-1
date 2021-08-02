@@ -1,8 +1,28 @@
 {
     "Flex": 2,
     "name": "This is stupid.",
-    "node": "caed1964-6ec9-470f-91df-b48b9e1ea101",
+    "node": "7830c936-04b0-43cb-88c8-ab5748bbf2e6",
     "objects": [
+        {
+            "uuid": "7830c936-04b0-43cb-88c8-ab5748bbf2e6",
+            "format": "Sonic 1.js",
+            "name": "object",
+            "palettes": [],
+            "art": {
+                "path": "artnem/Continue Screen Stuff.bin",
+                "compression": "Nemesis",
+                "offset": 0
+            },
+            "mappings": {
+                "path": "_maps/Continue Screen.asm",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "label": ""
+            }
+        },
         {
             "uuid": "ed19646e-c9f7-4f91-9fb4-8b9e1ea101d3",
             "format": "Sonic 1.js",
