@@ -1,12 +1,32 @@
 {
     "Flex": 2,
     "name": "This is stupid.",
-    "node": "7830c936-04b0-43cb-88c8-ab5748bbf2e6",
+    "node": "eb72f728-69a2-44b4-b24e-a3930ad4170c",
     "objects": [
+        {
+            "uuid": "eb72f728-69a2-44b4-b24e-a3930ad4170c",
+            "format": "Sonic 1.js",
+            "name": "Life Counter",
+            "palettes": [],
+            "art": {
+                "path": "artnem/HUD - Life Counter Icon.bin",
+                "compression": "Nemesis",
+                "offset": 0
+            },
+            "mappings": {
+                "path": "",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "label": ""
+            }
+        },
         {
             "uuid": "7830c936-04b0-43cb-88c8-ab5748bbf2e6",
             "format": "Sonic 1.js",
-            "name": "object",
+            "name": "Continue?",
             "palettes": [],
             "art": {
                 "path": "artnem/Continue Screen Stuff.bin",
